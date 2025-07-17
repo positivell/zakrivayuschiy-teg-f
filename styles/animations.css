@@ -1,11 +1,80 @@
-/* Опишите в этом файле все keyframes для проекта и стили анимаций иконки Like.
+.like-icon.is-liked .heart {
+  transform-origin: center;
+  animation: like-anim 0.3s 0.1s ease-in;
+}
 
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
+.like-icon.is-liked .sparks {
+  animation: like-anim-sparks 0.3s 0.3s ease-in;
+}
 
-*/
+.like-icon:hover .core {
+  --heart-core-color: #000;
+  transition: 0.3s 0s;
+}
+
+.like-icon:hover .main-body {
+  --heart-main-color: #000;
+  transition-delay: 0.05s;
+}
+
+.like-icon:active .core {
+  --heart-core-color: red;
+  transition: 0.3s 0s;
+}
+
+.like-icon:active .main-body {
+  --heart-main-color: red;
+  transition: 0.3s 0.05s;
+}
+
+.like-icon.is-liked .core {
+  --heart-core-color: red;
+  transition: 0.3s 0s;
+}
+
+.like-icon.is-liked .main-body {
+  --heart-main-color: red;
+  transition: 0.3s 0.05s;
+}
+
+.like-icon.is-liked .contour {
+  --heart-contour-color: red;
+  transition: 0.3s 0.06s;
+}
+
+.contour {
+  transition: fill 0.1s linear;
+}
+
+.core {
+  --heart-core-color: transparent;
+  fill: var(--heart-core-color);
+  transition: fill 0.3s 0.03s linear;
+}
+
+.main-body {
+  --heart-main-color: transparent;
+  transition: fill 0.3s linear;
+}
+
+.sparks {
+  opacity: 0;
+}
+
+@keyframes like-anim {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.25);
+  }
+}
+
+@keyframes like-anim-sparks {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
