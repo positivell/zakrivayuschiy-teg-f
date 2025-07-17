@@ -1,10 +1,10 @@
 .like-icon.is-liked .heart {
   transform-origin: center;
-  animation: like-anim 0.3s 0.1s ease-in;
+  animation: fadeIn 0.3s 0.1s ease-in;
 }
 
 .like-icon.is-liked .sparks {
-  animation: like-anim-sparks 0.3s 0.3s ease-in;
+  animation: slideInFromLeft 0.3s 0.3s ease-in;
 }
 
 .like-icon:hover .core {
@@ -61,7 +61,7 @@
   opacity: 0;
 }
 
-@keyframes like-anim {
+@keyframes fadeIn {
   0% {
     transform: scale(1);
   }
@@ -70,7 +70,7 @@
   }
 }
 
-@keyframes like-anim-sparks {
+@keyframes slideInFromLeft {
   0% {
     opacity: 0;
   }
